@@ -1,0 +1,93 @@
+import React, { useState } from 'react'
+import PageTitle from '../components/Page.Title'
+
+
+const Pesquisa = () => {
+    const [form, setForm] = useState({
+        Nome: '',
+        Email: '',
+        Whatsapp: '',
+        Nota: 0,
+        Sugestao: ''
+    })
+    const notas = [0, 1, 2, 3, 4, 5]
+    const [sucess, setSucces] = useState(false)
+    const [retorno, setRetorno] = useState({})
+    const save = async () => {
+        try {
+            const response = await fetch('/api/save', {
+                method: 'POST',
+                body: JSON.stringify(form)
+            })
+            const data = await response.json()
+            setSucces(true)
+            setRetorno(data)
+        } catch (err) {
+
+        }
+    }
+    const onChange = evt => {
+        const value = evt.target.value
+        const key = evt.target.name
+        setForm(old => ({
+            ...old,
+            [key]: value
+        }))
+    }
+    return (
+        <div pt-6>
+            <PageTitle title='Pesquisa' />
+            <h1 className=' text-center font-bold my-4 text-2x1'>Críticas e sujestões</h1>
+            <p className='text-center mb-6'>
+                O restaurante X sempre busca por atender melhor seus clientes.<br />
+                Por isso, estamos sempre abertos a ouvir a sua opinião.
+            </p>
+            { !sucess && <div className='w-1/5 mx-auto'>
+                <label className='font-bold'>Seu nome:</label>
+                <input type='text' className='p-4 block shadow bg-blue-100 my-2 rounded' placeholder='Digite seu nome:' onChange={onChange} name='Nome' value={form.Nome} />
+                <label className='font-bold'>E-mail:</label>
+                <input type='text' className='p-4 block shadow bg-blue-100 my-2 rounded' placeholder='exemple@gmail.com' onChange={onChange} name='Email' value={form.Email} />
+                <label className='font-bold'>Whatsapp:</label>
+                <input type='text' className='p-4 block shadow bg-blue-100 my-2 rounded' placeholder='(44)9999-9999' onChange={onChange} name='Whatsapp' value={form.Whatsapp} />
+                <label className='font-bold'>Sua crítica ou sugestão:</label>
+                <textarea type='text' className='p-4 block shadow bg-blue-100 my-2 rounded' placeholder='Deixe aqui sua crítica ou sugestão' onChange={onChange} name='Sugestao' value={form.Sugestao} />
+                <label className='font-bold'>Nota:</label>
+                <div className='flex py-6'>
+                    {notas.map(nota => {
+                        return (
+                            <label className='block w-1/6 text-center'>
+                                {nota} <br />
+                                <input type='radio' name='Nota' value={nota} onChange={onChange} />
+                            </label>
+                        )
+                    })
+                    }
+                </div>
+                <button className='bg-blue-400 px-14 py-4 font-bold rounded-lg shadow-lg focus:ring-2 focus:ring-blue-500 my-2' onClick={save}>Salvar</button>
+            </div>}
+            {sucess && <div className='w-1/5 mx-auto'>
+                <p className='mb-6 text-center bg-blue-100 border-t border-blue-500 text-blue-700 px-4 py-3'>Obrigado por contribuir com sua sugestão ou crítica.</p>
+                {
+                    retorno.showCoupon && <div className='bg-blue-500 bg-opacity-110  text-center border p-3 mb-4'>
+                        Seu cupom: <br />
+                        <span className='font-bold text 2x1'>{retorno.Cupom} </span>
+                    </div>
+                }
+                {
+                    retorno.showCoupon && <div className='text-center border bg-yellow-300 bg-opacity-80 p-4 mb-4'>
+                        <span className='font-bold block mb-2'>{retorno.Promo} </span>
+                        <br />
+                        <span className='italic'>Tire um print ou foto desta tela e apresente ao garçon.</span>
+                    </div>
+                }
+            </div>}
+        </div>
+    )
+}
+
+export default Pesquisa
+
+/*USAMOS <label>texto</label>
+        <input type='text>
+PARA ASSIM CRIARMOS UM LOCAL PARA O USASUÁRIO ESCREVER AS INFORMAÇÕES.
+*/
