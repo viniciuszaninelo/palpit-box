@@ -1,5 +1,5 @@
 import React from 'react'
-import Link from 'next/Link'
+import Link from 'next/link'
 import PageTitle from '../components/Page.Title'
 
 const Sobre = () => {
@@ -16,4 +16,4 @@ const Sobre = () => {
     )
 }
 
-export default Sobre 
+export default Sobre

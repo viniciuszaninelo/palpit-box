@@ -1,5 +1,5 @@
 import React from 'react'
-import Link from 'next/Link'
+import Link from 'next/link'
 import PageTitle from '../components/Page.Title'
 
 const Contato = () => {
@@ -16,4 +16,4 @@ const Contato = () => {
     )
 }
 
-export default Contato  
+export default Contato

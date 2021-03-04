@@ -1,5 +1,5 @@
 import React from 'react'
-import Link from 'next/Link'
+import Link from 'next/link'
 import useSWR from 'swr'
 import PageTitle from '../components/Page.Title'
 
@@ -28,4 +28,4 @@ const Index = () => {
         </div>
     )
 }
-export default Index 
+export default Index
