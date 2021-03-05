@@ -17,6 +17,7 @@ export default async (req, res) => {
     })
 
     await doc.loadInfo()
+    console.log(doc.title())
     const sheetConfig = doc.sheetsByIndex[2]
     await sheetConfig.loadCells('A3:B3')
 
@@ -49,6 +50,6 @@ export default async (req, res) => {
     }))
   } catch (err) {
     console.log(err)
-    res.end('error')
+    res.end(err)
   }
 }
