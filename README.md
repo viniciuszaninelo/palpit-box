@@ -16,11 +16,11 @@ npm install
 npm run dev
 ```
 
-### Planning 
+## Planning 
 You can assemble your ideas using [Figma](https://www.figma.com/) <br>
 You can put your project on the air using [Vercel](https://vercel.com/login) (without extra settings)
 
-### Built with 
+## Built with 
 - [NextJS](https://nextjs.org/) - The React Framework
 - [ReactJS](https://reactjs.org/) - A JavaScript library for building user interfaces 
 
