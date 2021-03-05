@@ -1,4 +1,3 @@
-
 import { GoogleSpreadsheet } from 'google-spreadsheet'
 import moment from 'moment'
 import { fromBase64 } from '../../utils/base64'
@@ -16,8 +15,8 @@ export default async (req, res) => {
       client_email: process.env.SHEET_CLIENT_EMAIL,
       private_key: fromBase64(process.env.SHEET_PRIVATE_KEY)
     })
-    await doc.loadInfo()
 
+    await doc.loadInfo()
     const sheetConfig = doc.sheetsByIndex[2]
     await sheetConfig.loadCells('A3:B3')
 
