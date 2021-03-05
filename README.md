@@ -16,4 +16,6 @@ npm install
 npm run dev
 ```
 
+### Planning 
+You can assemble your ideas using [Figma](https://www.figma.com/)
 
