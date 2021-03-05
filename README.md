@@ -17,5 +17,5 @@ npm run dev
 ```
 
 ### Planning 
-You can assemble your ideas using [Figma](https://www.figma.com/)
+You can assemble your ideas using [Figma](https://www.figma.com/) <br>
 You can put your project on the air using [Vercel](https://vercel.com/login) (without extra settings)
