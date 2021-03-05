@@ -6,6 +6,8 @@ The project is summarized in a website, where the customer enters to give his su
 
 [WebSite](https://palpit-box.vercel.app/)
 
+! [FotoPalpiteBox] (FotoPalpiteBox.png)
+
 
 ### Prerequisites
 
