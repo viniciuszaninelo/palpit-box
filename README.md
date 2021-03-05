@@ -6,6 +6,8 @@ The project is summarized in a website, where the customer enters to give his su
 
 [WebSite](https://palpit-box.vercel.app/)
 
+![Preview](file:///C:/Users/vinic/Desktop/FotoPalpiteBox.png)
+
 ### Prerequisites
 
 You need NodeJS and NPM in your computer
