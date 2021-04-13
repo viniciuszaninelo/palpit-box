@@ -6,7 +6,7 @@ The project is summarized in a website, where the customer enters to give his su
 
 [WebSite](https://palpit-box.vercel.app/)
 
-
+![Preview](https://github.com/viniciusmarquezaninelo/palpit-box/blob/master/print-readme.png?raw=true)
 
 
 ### Prerequisites
