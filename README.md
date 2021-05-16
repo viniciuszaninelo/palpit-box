@@ -30,4 +30,5 @@ You can put your project on the air using [Vercel](https://vercel.com/login) (wi
 Vinícius Marques Zaninelo - [Linkedin](https://www.linkedin.com/in/vin%C3%ADciuszaninelo/)
 
 ## Acknowledgment
--Project carried out during week 1 of the FullStackmaster [DevPleno](https://devpleno.com/)
+-
+project carried out during the classes of [DevPleno](https://devpleno.com/)
